@@ -14,7 +14,7 @@ const CACHE_ASSETS = [
   '/img/7.jpg',
   '/img/8.jpg',
   '/img/download.jpg',
-  '/img/s1.png',
+  '/img/s1.jpg',
   '/img/s2.jpg',
   '/img/s3.jpg'
 ];
