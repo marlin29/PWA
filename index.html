@@ -262,7 +262,35 @@
 			</div>
 		</div>
 	</footer>
+	
+	<script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/service-worker.js").then(
+            function (registration) {
+              console.log(
+                "ServiceWorker registered with scope:",
+                registration.scope
+              );
+            },
+            function (err) {
+              console.log("ServiceWorker registration failed:", err);
+            }
+          );
+        });
+      }
+      function askNotificationPermission() {
+        Notification.requestPermission().then((permission) => {
+          if (permission === "granted") {
+            console.log("Permiso para notificaciones concedido.");
+          } else {
+            console.log("Permiso para notificaciones denegado.");
+          }
+        });
+      }
 
+      askNotificationPermission();
+    </script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="testimonios.js"></script>
 </body>
