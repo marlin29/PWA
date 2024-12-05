@@ -62,24 +62,31 @@ self.addEventListener('fetch', (event) => {
 });
 
 // Evento de push
-self.addEventListener('push', (event) => {
-  let data = {};
+self.addEventListener("push", (event) => {
+  let data = {
+    title: "Compra ahora",
+    body: "Aprovecha el buen fin",
+  };
 
   if (event.data) {
-    data = event.data.json();
-  } else {
-    data = { title: 'Notificación', body: '¡Nueva notificación!' };
+    try {
+      const eventData = event.data.json();
+      data.title = eventData.title || data.title;
+      data.body = eventData.body || data.body;
+    } catch (e) {
+      console.error("Error procesando los datos de la notificación:", e);
+    }
   }
+
+  console.log("Datos del evento push:", data);
 
   const options = {
     body: data.body,
-    icon: 'imagen_icono.png',
-    badge: 'imagen_icono.png',
+    icon: "img/icon-192x192.png",
+    badge: "img/icon-192x192.jpg",
   };
 
-  event.waitUntil(
-    self.registration.showNotification(data.title, options)
-  );
+  event.waitUntil(self.registration.showNotification(data.title, options));
 });
 
 // Evento de clic en notificación
