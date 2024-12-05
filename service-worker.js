@@ -1,22 +1,22 @@
 const CACHE_NAME = 'my-cache-v1';
 
 const CACHE_ASSETS = [
-  './',
-  './index.html',
-  './css/bootstrap.min.css',
-  './js/bootstrap.bundle.min.js',
-  './img/1.jpg',
-  './img/2.jpg',
-  './img/3.jpg',
-  './img/4.jpg',
-  './img/5.jpg',
-  './img/6.jpg',
-  './img/7.jpg',
-  './img/8.jpg',
-  './img/download.jpg',
-  './img/s1.png',
-  './img/s2.jpg',
-  './img/s3.jpg'
+  '/',
+  '/index.html',
+  '/css/bootstrap.min.css',
+  '/js/bootstrap.bundle.min.js',
+  '/img/1.jpg',
+  '/img/2.jpg',
+  '/img/3.jpg',
+  '/img/4.jpg',
+  '/img/5.jpg',
+  '/img/6.jpg',
+  '/img/7.jpg',
+  '/img/8.jpg',
+  '/img/download.jpg',
+  '/img/s1.png',
+  '/img/s2.jpg',
+  '/img/s3.jpg'
 ];
 
 self.addEventListener('install', (event) => {
